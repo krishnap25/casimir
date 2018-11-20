@@ -1,0 +1,16 @@
+# PyCharm directories
+.idea/
+
+# Mac OS X files
+.DS_Store
+
+# temp directories
+_*/
+
+# data
+data/*
+
+# Python byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
