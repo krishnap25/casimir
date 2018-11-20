@@ -8,7 +8,7 @@ This is code accompanying the paper
  in NeurIPS 2018. 
 
 ## Documentation
-The documentation for this toolbox can be found [here](https://krishnap25.github.io/documentation/casimir/).
+The documentation for this toolbox can be found [here](https://homes.cs.washington.edu/~pillutla/documentation/casimir/).
 
 ## Contributing
 
