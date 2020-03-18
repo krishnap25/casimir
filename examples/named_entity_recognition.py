@@ -6,6 +6,8 @@ sys.path.append(os.path.abspath('./'))
 import casimir.data.named_entity_recognition as ner  # noqa: E402
 import casimir.optim as optim  # noqa: E402
 
+# Make sure to compile the cython files using 
+# `./scripts/compile_cython.sh` 
 
 # Make sure that these files exist to run this example. Otherwise, edit file names below to reflect the true names:
 train_file = 'data/ner/eng.train'
