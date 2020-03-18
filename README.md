@@ -9,6 +9,10 @@ This is code accompanying the paper
 
 ## Documentation
 The documentation for this toolbox can be found [here](https://homes.cs.washington.edu/~pillutla/documentation/casimir/).
+Note that to compile the cython files in `casimir/data/named_entity_recognition`, run
+```
+`./scripts/compile_cython.sh` 
+```
 
 ## Contributing
 
