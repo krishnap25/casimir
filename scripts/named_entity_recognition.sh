@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Make sure to compile the cython files using 
+# `./scripts/compile_cython.sh` 
+
 source scripts/parallelize.sh
 njobs=48
 
