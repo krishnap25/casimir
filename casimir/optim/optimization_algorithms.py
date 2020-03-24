@@ -488,7 +488,8 @@ class CasimirSVRGOptimizer(Optimizer):
         r = self.moreau_coefficient + self.strong_convexity  # \kappa_{k} + \lambda
         r1 = self.moreau_coefficient_next + self.strong_convexity  # \kappa_{k+1} + \lambda
 
-        a1 = (-a**2 * r + math.sqrt(a**4 * r**2 + 4 * r1 * (a**2 * r + a * sc))) / (2 * r1)  # \alpha_k
+        # a1 = (-a**2 * r + math.sqrt(a**4 * r**2 + 4 * r1 * (a**2 * r + a * sc))) / (2 * r1)  # \alpha_k
+        a1 = (sc - a**2 * r + math.sqrt((a**2 * r - sc)**2 + 4 * r * r1 * a**2)) / (2 * r1) # \alpha_k
         b = a * (1 - a) * r / (a**2 * r + a1 * r1)  # \beta_k
         return a1, b
 
