@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Casimir API summary &#8212; casimir  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/guzzle.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API reference for casimir.optim" href="api_detailed/optim.html" />
+    <link rel="prev" title="Getting Started" href="start.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="api_detailed/optim.html" title="API reference for casimir.optim"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="start.html" title="Getting Started"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">casimir  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Casimir API summary</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">Casimir API summary</a><ul>
+<li><a class="reference internal" href="#optimization">Optimization</a></li>
+<li><a class="reference internal" href="#data">Data</a></li>
+<li><a class="reference internal" href="#structured-prediction-utilities">Structured Prediction Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="start.html"
+                          title="previous chapter">Getting Started</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="api_detailed/optim.html"
+                          title="next chapter">API reference for casimir.optim</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="index.html">Docs</a></li>
+              
+              <li>Casimir API summary</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <section id="casimir-api-summary">
+<h1>Casimir API summary<a class="headerlink" href="#casimir-api-summary" title="Permalink to this heading">¶</a></h1>
+<section id="optimization">
+<h2>Optimization<a class="headerlink" href="#optimization" title="Permalink to this heading">¶</a></h2>
+<p>Incremental First Order Oracles - Base classes:</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/optim.html#casimir.optim.IncrementalFirstOrderOracle" title="casimir.optim.IncrementalFirstOrderOracle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.optim.IncrementalFirstOrderOracle</span></code></a>()</p></td>
+<td><p>Base class for incremental first order oracles (IFO).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api_detailed/optim.html#casimir.optim.SmoothedIncrementalFirstOrderOracle" title="casimir.optim.SmoothedIncrementalFirstOrderOracle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.optim.SmoothedIncrementalFirstOrderOracle</span></code></a>([...])</p></td>
+<td><p>Base class of smoothed incremental first order oracles.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Optimization Algorithms:</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/optim.html#casimir.optim.optimize_ifo" title="casimir.optim.optimize_ifo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.optim.optimize_ifo</span></code></a>(initial_model, ...)</p></td>
+<td><p>Minimize a convex function with access to a (smoothed) incremental first order oracle using a primal algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api_detailed/optim.html#casimir.optim.CasimirSVRGOptimizer" title="casimir.optim.CasimirSVRGOptimizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.optim.CasimirSVRGOptimizer</span></code></a>(...[, ...])</p></td>
+<td><p>Implement Casimir (Catalyst with smoothing) or Catalyst outer loop with SVRG as the inner loop.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/optim.html#casimir.optim.SGDOptimizer" title="casimir.optim.SGDOptimizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.optim.SGDOptimizer</span></code></a>(initial_model[, ...])</p></td>
+<td><p>Implement the stochastic (sub-)gradient method with various learning rate and averaging schemes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api_detailed/optim.html#casimir.optim.SVRGOptimizer" title="casimir.optim.SVRGOptimizer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.optim.SVRGOptimizer</span></code></a>(initial_model, ...)</p></td>
+<td><p>Implement Stochastic Variance Reduced Gradient (SVRG) with optional smoothing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/optim.html#casimir.optim.block_coordinate_frank_wolfe_optimize" title="casimir.optim.block_coordinate_frank_wolfe_optimize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.optim.block_coordinate_frank_wolfe_optimize</span></code></a>(...)</p></td>
+<td><p>Implement the Block Coordinate Frank-Wolfe (BCFW) algorithm for structured prediction.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Regularization:</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/optim.html#casimir.optim.L2Penalty" title="casimir.optim.L2Penalty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.optim.L2Penalty</span></code></a>(regularization_parameter)</p></td>
+<td><p>Class representing the L2 regularization penalty.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">¶</a></h2>
+<p>Classification:</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/data.html#casimir.data.LogisticRegressionIfo" title="casimir.data.LogisticRegressionIfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.data.LogisticRegressionIfo</span></code></a>(data, labels)</p></td>
+<td><p>Create an incremental First Order Oracle for logistic regression.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Named Entity Recognition:</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/data.html#casimir.data.named_entity_recognition.create_ner_ifo_from_data" title="casimir.data.named_entity_recognition.create_ner_ifo_from_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.data.named_entity_recognition.create_ner_ifo_from_data</span></code></a>(...)</p></td>
+<td><p>Create Smooth IFOs for train, development and test sets in CoNLL 2003 for the structural hinge loss.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api_detailed/data.html#casimir.data.named_entity_recognition.NamedEntityRecognitionIfo" title="casimir.data.named_entity_recognition.NamedEntityRecognitionIfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.data.named_entity_recognition.NamedEntityRecognitionIfo</span></code></a>(...)</p></td>
+<td><p>Create a smoothed incremental first order oracle for structural hinge loss for the task of NER.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/data.html#casimir.data.named_entity_recognition.NerDataset" title="casimir.data.named_entity_recognition.NerDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.data.named_entity_recognition.NerDataset</span></code></a>(...)</p></td>
+<td><p>Class to parse CoNLL-2003 data and allow random access into dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api_detailed/data.html#casimir.data.named_entity_recognition.viterbi_decode" title="casimir.data.named_entity_recognition.viterbi_decode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.data.named_entity_recognition.viterbi_decode</span></code></a>(...)</p></td>
+<td><p>Viterbi decoding to find maximum scoring label sequence</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/data.html#casimir.data.named_entity_recognition.viterbi_decode_top_k" title="casimir.data.named_entity_recognition.viterbi_decode_top_k"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.data.named_entity_recognition.viterbi_decode_top_k</span></code></a>(...)</p></td>
+<td><p>Top-K Viterbi decoding to find <span class="math notranslate nohighlight">\(K\)</span> maximum scoring label sequences</p></td>
+</tr>
+</tbody>
+</table>
+<p>Object Localization:</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/data.html#casimir.data.localization.create_loc_ifo_from_data" title="casimir.data.localization.create_loc_ifo_from_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.data.localization.create_loc_ifo_from_data</span></code></a>(...)</p></td>
+<td><p>Create a smoothed incremental first order oracle for train and validation sets for Pascal VOC 2007 given candidate bounding boxes and features.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api_detailed/data.html#casimir.data.localization.LocalizationIfo" title="casimir.data.localization.LocalizationIfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.data.localization.LocalizationIfo</span></code></a>(...)</p></td>
+<td><p>Create the smoothed IFO object for the structural hinge loss object localization with Pascal VOC.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/data.html#casimir.data.localization.VocDataset" title="casimir.data.localization.VocDataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.data.localization.VocDataset</span></code></a>(...[, ...])</p></td>
+<td><p>Store a set of images of Pascal VOC 2007 for image localization.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="structured-prediction-utilities">
+<h2>Structured Prediction Utilities<a class="headerlink" href="#structured-prediction-utilities" title="Permalink to this heading">¶</a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/struct_pred.html#casimir.structured_prediction_experiment.utils.make_parser" title="casimir.structured_prediction_experiment.utils.make_parser"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.structured_prediction_experiment.utils.make_parser</span></code></a>(task)</p></td>
+<td><p>Create argument parser for structured prediction experiments.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api_detailed/struct_pred.html#casimir.structured_prediction_experiment.utils.get_output_filename" title="casimir.structured_prediction_experiment.utils.get_output_filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.structured_prediction_experiment.utils.get_output_filename</span></code></a>(...)</p></td>
+<td><p>Get name of output file based on arguments and task.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api_detailed/struct_pred.html#casimir.structured_prediction_experiment.utils.get_ifo" title="casimir.structured_prediction_experiment.utils.get_ifo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.structured_prediction_experiment.utils.get_ifo</span></code></a>(...)</p></td>
+<td><p>Get appropriate Incremental First Order Oracle (IFO) for structured prediction task.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api_detailed/struct_pred.html#casimir.structured_prediction_experiment.utils.run_algorithm" title="casimir.structured_prediction_experiment.utils.run_algorithm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">casimir.structured_prediction_experiment.utils.run_algorithm</span></code></a>(...)</p></td>
+<td><p>Run optimization algorithm for structured prediction experiments.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="start.html" title="previous chapter (use the left arrow)">Getting Started</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="api_detailed/optim.html" title="next chapter (use the right arrow)">API reference for casimir.optim</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="api_detailed/optim.html" title="API reference for casimir.optim"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="start.html" title="Getting Started"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">casimir  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Casimir API summary</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Krishna Pillutla. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

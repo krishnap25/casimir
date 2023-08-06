@@ -40,8 +40,17 @@ author = {Pillutla, Krishna and
           Roulet, Vincent and 
           Kakade, Sham M. and
           Harchaoui, Zaid},
-booktitle = {Advances in Neural Information Processing Systems 31},
+booktitle = {NeurIPS},
 year = {2018},
+
+@incollection{pillutla-etal:casimir:ssp2023,
+title = {{Modified Gauss-Newton Algorithms under Noise}},
+author = {Pillutla, Krishna and
+          Roulet, Vincent and 
+          Kakade, Sham M. and
+          Harchaoui, Zaid},
+booktitle = {IEEE SSP},
+year = {2023},
 }
 ```
 

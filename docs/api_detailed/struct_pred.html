@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>API reference for structured_prediction_experiment &#8212; casimir  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/guzzle.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Reproducing experiments in the paper" href="../expt.html" />
+    <link rel="prev" title="API reference for casimir.data" href="data.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../expt.html" title="Reproducing experiments in the paper"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="data.html" title="API reference for casimir.data"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">casimir  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">API reference for structured_prediction_experiment</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">API reference for structured_prediction_experiment</a><ul>
+<li><a class="reference internal" href="#casimir.structured_prediction_experiment.utils.make_parser"><code class="docutils literal notranslate"><span class="pre">make_parser()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.structured_prediction_experiment.utils.get_output_filename"><code class="docutils literal notranslate"><span class="pre">get_output_filename()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.structured_prediction_experiment.utils.get_ifo"><code class="docutils literal notranslate"><span class="pre">get_ifo()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.structured_prediction_experiment.utils.run_algorithm"><code class="docutils literal notranslate"><span class="pre">run_algorithm()</span></code></a></li>
+<li><a class="reference internal" href="#command-line-arguments">Command line arguments</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="data.html"
+                          title="previous chapter">API reference for casimir.data</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../expt.html"
+                          title="next chapter">Reproducing experiments in the paper</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api_detailed/struct_pred.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../index.html">Docs</a></li>
+              
+              <li>API reference for structured_prediction_experiment</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <section id="api-reference-for-structured-prediction-experiment">
+<h1>API reference for structured_prediction_experiment<a class="headerlink" href="#api-reference-for-structured-prediction-experiment" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="casimir.structured_prediction_experiment.utils.make_parser">
+<span class="sig-prename descclassname"><span class="pre">casimir.structured_prediction_experiment.utils.</span></span><span class="sig-name descname"><span class="pre">make_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">task</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.structured_prediction_experiment.utils.make_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create argument parser for structured prediction experiments.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="casimir.structured_prediction_experiment.utils.get_output_filename">
+<span class="sig-prename descclassname"><span class="pre">casimir.structured_prediction_experiment.utils.</span></span><span class="sig-name descname"><span class="pre">get_output_filename</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.structured_prediction_experiment.utils.get_output_filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get name of output file based on arguments and task.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="casimir.structured_prediction_experiment.utils.get_ifo">
+<span class="sig-prename descclassname"><span class="pre">casimir.structured_prediction_experiment.utils.</span></span><span class="sig-name descname"><span class="pre">get_ifo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.structured_prediction_experiment.utils.get_ifo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get appropriate Incremental First Order Oracle (IFO) for structured prediction task.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="casimir.structured_prediction_experiment.utils.run_algorithm">
+<span class="sig-prename descclassname"><span class="pre">casimir.structured_prediction_experiment.utils.</span></span><span class="sig-name descname"><span class="pre">run_algorithm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dev_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_ifo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.structured_prediction_experiment.utils.run_algorithm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run optimization algorithm for structured prediction experiments.</p>
+</dd></dl>
+
+<section id="command-line-arguments">
+<h2>Command line arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this heading">¶</a></h2>
+<p>The table below describes command line arguments for the structured prediction experiments,
+namely named entity recognition and visual object localization. The main files are respectively
+<code class="docutils literal notranslate"><span class="pre">main_ner.py</span></code> and <code class="docutils literal notranslate"><span class="pre">main_loc.py</span></code>.
+The common arguments apply to both these files, which specialized arguments apply only to individual files.
+This is followed by arguments unique to each individual main file.</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text"><strong>Common command line arguments</strong></span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l2reg</p></td>
+<td><p>float</p></td>
+<td><p>0.1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\ell_2\)</span> regularizer which taken to be <code class="docutils literal notranslate"><span class="pre">l2reg</span></code><span class="math notranslate nohighlight">\(/n\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the number of examples</p></td>
+</tr>
+<tr class="row-odd"><td><p>prefix</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'./data'</span></code></p></td>
+<td><p>Prefix applied to all data paths such as <code class="docutils literal notranslate"><span class="pre">train_file</span></code> or <code class="docutils literal notranslate"><span class="pre">bbox-dir</span></code> below</p></td>
+</tr>
+<tr class="row-even"><td><p>output-dir</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'./outputs'</span></code></p></td>
+<td><p>Directory where logged outputs are saved</p></td>
+</tr>
+<tr class="row-odd"><td><p>algorithm</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'sgd'</span></code></p></td>
+<td><p>Which optimization algorithm to use. See below for a detailed <a class="reference internal" href="#description">description</a> of options and what they imply.</p></td>
+</tr>
+<tr class="row-even"><td><p>num_passes</p></td>
+<td><p>int</p></td>
+<td><p>100</p></td>
+<td><p>Maximum number of passes to make through data</p></td>
+</tr>
+<tr class="row-odd"><td><p>seed</p></td>
+<td><p>float</p></td>
+<td><p>1234</p></td>
+<td><p>Random seed to use for reproducibility</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>lr</p></td>
+<td><p>float</p></td>
+<td><p>1.0</p></td>
+<td><p>Learning rate for SGD or SVRG or Casimir-SVRG (<code class="docutils literal notranslate"><span class="pre">'csvrg_lr'</span></code>). Ignored by <code class="docutils literal notranslate"><span class="pre">'csvrg'</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>lr-t</p></td>
+<td><p>float</p></td>
+<td><p>1.0</p></td>
+<td><p>Learning rate decay for SGD and ignored by other algorithms. Use learning rate <span class="math notranslate nohighlight">\(\eta_t = \eta_0 / (1 + t/t_0)\)</span> where <span class="math notranslate nohighlight">\(\eta_0\)</span> is specified using <code class="docutils literal notranslate"><span class="pre">--lr</span></code> and <span class="math notranslate nohighlight">\(t_0\)</span> is specified using <code class="docutils literal notranslate"><span class="pre">--lr-t</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>L</p></td>
+<td><p>float</p></td>
+<td><p>1.0</p></td>
+<td><p>Gradient Lipschtiz coefficient for use by Casimir-SVRG (<code class="docutils literal notranslate"><span class="pre">'csvrg'</span></code>). Ignored by other algorithms</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>smoother</p></td>
+<td><p>float</p></td>
+<td><p>1.0</p></td>
+<td><p>Initial smoothing coefficient for algorithms that require smoothing. Ignored by algorithms that do not require smoothing</p></td>
+</tr>
+<tr class="row-even"><td><p>decay_smoother</p></td>
+<td><p>str</p></td>
+<td><p>‘none’</p></td>
+<td><p>Type to smoothing decay to be applied. Options are <code class="docutils literal notranslate"><span class="pre">'none'</span></code> for no decay or <code class="docutils literal notranslate"><span class="pre">'expo'</span></code> for <span class="math notranslate nohighlight">\(\mu_0 c_t^{-t}\)</span> or <code class="docutils literal notranslate"><span class="pre">'linear'</span></code> for <span class="math notranslate nohighlight">\(\mu_0 / t\)</span> where <span class="math notranslate nohighlight">\(\mu_0\)</span> is specified via <code class="docutils literal notranslate"><span class="pre">--smoother</span></code>. Refer to documentation of <code class="docutils literal notranslate"><span class="pre">casimir.optim.CasimirSVRGOptimizer</span></code> for details.</p></td>
+</tr>
+<tr class="row-odd"><td><p>K</p></td>
+<td><p>int</p></td>
+<td><p>5</p></td>
+<td><p>the value of <span class="math notranslate nohighlight">\(K\)</span> for top-<span class="math notranslate nohighlight">\(K\)</span> inference for <span class="math notranslate nohighlight">\(\ell_2\)</span> smoothing</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>warm_start</p></td>
+<td><p>int</p></td>
+<td><p>3</p></td>
+<td><p>Warm start strategy for Casimir-SVRG. <code class="docutils literal notranslate"><span class="pre">1</span></code> refers to <code class="docutils literal notranslate"><span class="pre">prox-center</span></code> while <code class="docutils literal notranslate"><span class="pre">2</span></code> to <code class="docutils literal notranslate"><span class="pre">extrapolation</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code> to <code class="docutils literal notranslate"><span class="pre">prev-iterate</span></code>. Refer to documentation of <code class="docutils literal notranslate"><span class="pre">casimir.optim.CasimirSVRGOptimizer</span></code> for details.</p></td>
+</tr>
+<tr class="row-even"><td><p>kappa</p></td>
+<td><p>float</p></td>
+<td><p>1.0</p></td>
+<td><p>scaling factor on initial Moreau coefficient for Casimir-SVRG variant <code class="docutils literal notranslate"><span class="pre">'csvrg_lr'</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text"><strong>Command line arguments specific to</strong> <code class="docutils literal notranslate"><span class="pre">main_ner.py</span></code></span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>train_file</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'conll03_ner/eng.train'</span></code></p></td>
+<td><p>Name of text file with training data</p></td>
+</tr>
+<tr class="row-odd"><td><p>dev_file</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'conll03_ner/eng.testa'</span></code></p></td>
+<td><p>Name of text file with development data</p></td>
+</tr>
+<tr class="row-even"><td><p>test_file</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'conll03_ner/eng.testb'</span></code></p></td>
+<td><p>Name of text file with †esting data</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text"><strong>Command line arguments specific to</strong> <code class="docutils literal notranslate"><span class="pre">main_loc.py</span></code></span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>object-class</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'dog'</span></code></p></td>
+<td><p>Name of object class to run experiment on</p></td>
+</tr>
+<tr class="row-odd"><td><p>bbox-dir</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'voc2007/bboxes'</span></code></p></td>
+<td><p>Name of directory with bounding box information. See <a class="reference external" href="../expt.html">this page</a> on how to obtain this data</p></td>
+</tr>
+<tr class="row-even"><td><p>features-dir</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'voc2007/features'</span></code></p></td>
+<td><p>Name of directory with bounding box features. See <a class="reference external" href="../expt.html">this page</a> on how to obtain this data</p></td>
+</tr>
+</tbody>
+</table>
+<span id="description"></span><table class="docutils align-default" id="id5">
+<caption><span class="caption-text"><strong>Description of algorithms accepted by</strong> <code class="docutils literal notranslate"><span class="pre">--algorithm</span></code></span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 90.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Algorithm</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'csvrg'</span></code></p></td>
+<td><p>Casimir-SVRG with learning rate specified implicitly via <code class="docutils literal notranslate"><span class="pre">grad_lipshitz_parameter</span></code>. Specify command line argument <code class="docutils literal notranslate"><span class="pre">--L</span></code> for <code class="docutils literal notranslate"><span class="pre">grad_lipschitz_parameter</span></code>. Requires smoothing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'csvrg_lr'</span></code></p></td>
+<td><p>Casimir-SVRG with learning rate specified direcly as <code class="docutils literal notranslate"><span class="pre">--lr</span></code>. Requires smoothing.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'svrg'</span></code></p></td>
+<td><p>SVRG with learning rate specified via <code class="docutils literal notranslate"><span class="pre">--lr</span></code>. Requires smoothing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'sgd'</span></code></p></td>
+<td><p>SGD with learning rates <span class="math notranslate nohighlight">\(\eta_t = \eta_0 / (1 + t/t_0)\)</span> where <span class="math notranslate nohighlight">\(\eta_0\)</span> is specified using <code class="docutils literal notranslate"><span class="pre">--lr</span></code> and <span class="math notranslate nohighlight">\(t_0\)</span> is specified using <code class="docutils literal notranslate"><span class="pre">--lr-t</span></code> and weighted averaging <span class="math notranslate nohighlight">\(\bar w_T = \frac{2}{T(T+1)} \sum_{t=0}^{T} t \cdot w_t\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'sgd_const'</span></code></p></td>
+<td><p>SGD with constant learning rate specified as <span class="math notranslate nohighlight">\(\eta_0\)</span> and weighted averaging <span class="math notranslate nohighlight">\(\bar w_T = \frac{2}{T(T+1)} \sum_{t=0}^{T} t \cdot w_t\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'pegasos'</span></code></p></td>
+<td><p>SGD with learning rates <span class="math notranslate nohighlight">\(\eta_t = (\lambda t)^{-1}\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is the <span class="math notranslate nohighlight">\(L_2\)</span> regularization and weighted averaging <span class="math notranslate nohighlight">\(\bar w_T = \frac{2}{T(T+1)} \sum_{t=0}^{T} t \cdot w_t\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'bcfw'</span></code></p></td>
+<td><p>Block Coordinate Frank Wolfe optimization for Structural SVMs.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="data.html" title="previous chapter (use the left arrow)">API reference for casimir.data</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="../expt.html" title="next chapter (use the right arrow)">Reproducing experiments in the paper</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../expt.html" title="Reproducing experiments in the paper"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="data.html" title="API reference for casimir.data"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">casimir  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">API reference for structured_prediction_experiment</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Krishna Pillutla. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

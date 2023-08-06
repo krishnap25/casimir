@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>API reference for casimir.data &#8212; casimir  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/guzzle.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API reference for structured_prediction_experiment" href="struct_pred.html" />
+    <link rel="prev" title="API reference for casimir.optim" href="optim.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="struct_pred.html" title="API reference for structured_prediction_experiment"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="optim.html" title="API reference for casimir.optim"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">casimir  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">API reference for casimir.data</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">API reference for casimir.data</a><ul>
+<li><a class="reference internal" href="#classification">Classification</a><ul>
+<li><a class="reference internal" href="#casimir.data.LogisticRegressionIfo"><code class="docutils literal notranslate"><span class="pre">LogisticRegressionIfo</span></code></a><ul>
+<li><a class="reference internal" href="#casimir.data.LogisticRegressionIfo.batch_function_value"><code class="docutils literal notranslate"><span class="pre">LogisticRegressionIfo.batch_function_value()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.LogisticRegressionIfo.batch_gradient"><code class="docutils literal notranslate"><span class="pre">LogisticRegressionIfo.batch_gradient()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.LogisticRegressionIfo.evaluation_function"><code class="docutils literal notranslate"><span class="pre">LogisticRegressionIfo.evaluation_function()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.LogisticRegressionIfo.function_value"><code class="docutils literal notranslate"><span class="pre">LogisticRegressionIfo.function_value()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.LogisticRegressionIfo.gradient"><code class="docutils literal notranslate"><span class="pre">LogisticRegressionIfo.gradient()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#named-entity-recognition">Named Entity Recognition:</a><ul>
+<li><a class="reference internal" href="#casimir.data.named_entity_recognition.create_ner_ifo_from_data"><code class="docutils literal notranslate"><span class="pre">create_ner_ifo_from_data()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.named_entity_recognition.NamedEntityRecognitionIfo"><code class="docutils literal notranslate"><span class="pre">NamedEntityRecognitionIfo</span></code></a><ul>
+<li><a class="reference internal" href="#casimir.data.named_entity_recognition.NamedEntityRecognitionIfo.evaluation_function"><code class="docutils literal notranslate"><span class="pre">NamedEntityRecognitionIfo.evaluation_function()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.named_entity_recognition.NamedEntityRecognitionIfo.function_value"><code class="docutils literal notranslate"><span class="pre">NamedEntityRecognitionIfo.function_value()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.named_entity_recognition.NamedEntityRecognitionIfo.gradient"><code class="docutils literal notranslate"><span class="pre">NamedEntityRecognitionIfo.gradient()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#casimir.data.named_entity_recognition.NerDataset"><code class="docutils literal notranslate"><span class="pre">NerDataset</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.named_entity_recognition.viterbi_decode"><code class="docutils literal notranslate"><span class="pre">viterbi_decode()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.named_entity_recognition.viterbi_decode_top_k"><code class="docutils literal notranslate"><span class="pre">viterbi_decode_top_k()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#visual-object-localization">Visual Object Localization</a><ul>
+<li><a class="reference internal" href="#casimir.data.localization.create_loc_ifo_from_data"><code class="docutils literal notranslate"><span class="pre">create_loc_ifo_from_data()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.localization.LocalizationIfo"><code class="docutils literal notranslate"><span class="pre">LocalizationIfo</span></code></a><ul>
+<li><a class="reference internal" href="#casimir.data.localization.LocalizationIfo.evaluation_function"><code class="docutils literal notranslate"><span class="pre">LocalizationIfo.evaluation_function()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.localization.LocalizationIfo.function_value"><code class="docutils literal notranslate"><span class="pre">LocalizationIfo.function_value()</span></code></a></li>
+<li><a class="reference internal" href="#casimir.data.localization.LocalizationIfo.gradient"><code class="docutils literal notranslate"><span class="pre">LocalizationIfo.gradient()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#casimir.data.localization.VocDataset"><code class="docutils literal notranslate"><span class="pre">VocDataset</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#extending-to-new-tasks-and-datasets">Extending to new tasks and datasets</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="optim.html"
+                          title="previous chapter">API reference for casimir.optim</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="struct_pred.html"
+                          title="next chapter">API reference for structured_prediction_experiment</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api_detailed/data.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../index.html">Docs</a></li>
+              
+              <li>API reference for casimir.data</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <section id="api-reference-for-casimir-data">
+<h1>API reference for casimir.data<a class="headerlink" href="#api-reference-for-casimir-data" title="Permalink to this heading">¶</a></h1>
+<p>This page summarizes the API for various data related operations for tasking including binary classification,
+named entity recognition and object localization. Lastly, it talks about how to use the optimization algorithms to
+new tasks or datasets.</p>
+<section id="classification">
+<span id="id1"></span><h2>Classification<a class="headerlink" href="#classification" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="casimir.data.LogisticRegressionIfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.data.</span></span><span class="sig-name descname"><span class="pre">LogisticRegressionIfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.LogisticRegressionIfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an incremental First Order Oracle for logistic regression.</p>
+<p>The component function <span class="math notranslate nohighlight">\(f_i\)</span> is the logistic loss defined on the <span class="math notranslate nohighlight">\(i\)</span> th example
+for binary classficiation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – matrix of size <span class="math notranslate nohighlight">\(n \times d\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number of data points
+and <span class="math notranslate nohighlight">\(d\)</span> is dimensionality of each data point</p></li>
+<li><p><strong>labels</strong> – vector of size <span class="math notranslate nohighlight">\(n\)</span>, with entries 0 or 1</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="casimir.data.LogisticRegressionIfo.batch_function_value">
+<span class="sig-name descname"><span class="pre">batch_function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.LogisticRegressionIfo.batch_function_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return function value <span class="math notranslate nohighlight">\(f(w)\)</span> where <span class="math notranslate nohighlight">\(w\)</span> is <code class="docutils literal notranslate"><span class="pre">model</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="casimir.data.LogisticRegressionIfo.batch_gradient">
+<span class="sig-name descname"><span class="pre">batch_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.LogisticRegressionIfo.batch_gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return gradient <span class="math notranslate nohighlight">\(\nabla f(w)\)</span> where <span class="math notranslate nohighlight">\(w\)</span> is <code class="docutils literal notranslate"><span class="pre">model</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="casimir.data.LogisticRegressionIfo.evaluation_function">
+<span class="sig-name descname"><span class="pre">evaluation_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.LogisticRegressionIfo.evaluation_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the classification error (0-1 loss).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="casimir.data.LogisticRegressionIfo.function_value">
+<span class="sig-name descname"><span class="pre">function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.LogisticRegressionIfo.function_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return function value <span class="math notranslate nohighlight">\(f_i(w)\)</span> where <span class="math notranslate nohighlight">\(w\)</span> is <code class="docutils literal notranslate"><span class="pre">model</span></code> and <span class="math notranslate nohighlight">\(i\)</span> is <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="casimir.data.LogisticRegressionIfo.gradient">
+<span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.LogisticRegressionIfo.gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return gradient <span class="math notranslate nohighlight">\(\nabla f_i(w)\)</span> where <span class="math notranslate nohighlight">\(w\)</span> is <code class="docutils literal notranslate"><span class="pre">model</span></code> and <span class="math notranslate nohighlight">\(i\)</span> is <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="named-entity-recognition">
+<span id="id2"></span><h2>Named Entity Recognition:<a class="headerlink" href="#named-entity-recognition" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="casimir.data.named_entity_recognition.create_ner_ifo_from_data">
+<span class="sig-prename descclassname"><span class="pre">casimir.data.named_entity_recognition.</span></span><span class="sig-name descname"><span class="pre">create_ner_ifo_from_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dev_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothing_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_highest_scores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.named_entity_recognition.create_ner_ifo_from_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Smooth IFOs for train, development and test sets in CoNLL 2003 for the structural hinge loss.</p>
+<p>Each component function <span class="math notranslate nohighlight">\(f_i\)</span> is the structural hinge loss for the <span class="math notranslate nohighlight">\(i\)</span> th datapoint <span class="math notranslate nohighlight">\(x_i,y_i\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_file</strong> – Text file with training data.</p></li>
+<li><p><strong>dev_file</strong> – Text file with development data. A value of <code class="docutils literal notranslate"><span class="pre">None</span></code> is taken to mean that there is no
+development set.</p></li>
+<li><p><strong>test_file</strong> – Test file with test data. A value of <code class="docutils literal notranslate"><span class="pre">None</span></code> is taken to mean that there is no test set.</p></li>
+<li><p><strong>smoothing_coefficient</strong> – Smoothing coefficient to initialize Smoothed IFOs.
+Default <code class="docutils literal notranslate"><span class="pre">None</span></code> (i.e., no smoothing).</p></li>
+<li><p><strong>num_highest_scores</strong> – The parameter <span class="math notranslate nohighlight">\(K\)</span> used by the top-K Viterbi algorithm for inference. Default 5.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Train, development and test Smoothed IFOs. Dev (test) IFO is <code class="docutils literal notranslate"><span class="pre">None</span></code> if dev (test) file is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="casimir.data.named_entity_recognition.NamedEntityRecognitionIfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.data.named_entity_recognition.</span></span><span class="sig-name descname"><span class="pre">NamedEntityRecognitionIfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ner_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_ner_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ner_to_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothing_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_highest_scores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.named_entity_recognition.NamedEntityRecognitionIfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a smoothed incremental first order oracle for structural hinge loss for the task of NER.</p>
+<p>Supports both non-smooth and <span class="math notranslate nohighlight">\(\ell_2\)</span> smoothed versions of the structural hinge loss
+but not entropy smoothing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ner_dataset</strong> – <a class="reference internal" href="#casimir.data.named_entity_recognition.NerDataset" title="casimir.data.named_entity_recognition.NerDataset"><code class="xref py py-class docutils literal notranslate"><span class="pre">NerDataset</span></code></a> object that supports <code class="docutils literal notranslate"><span class="pre">__len__</span></code> and <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> methods.</p></li>
+<li><p><strong>num_ner_tags</strong> – Number of NER tags. NER tags are assumed to be 0, 1, … , <code class="docutils literal notranslate"><span class="pre">num_ner_tags</span></code>-1.</p></li>
+<li><p><strong>ner_to_idx</strong> – dict mapping each NER tag to its integer ID.</p></li>
+<li><p><strong>smoothing_coefficient</strong> – The amount of smoothing <span class="math notranslate nohighlight">\(\mu\)</span>.</p></li>
+<li><p><strong>num_highest_scores</strong> – The value K for top-K inference.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="casimir.data.named_entity_recognition.NamedEntityRecognitionIfo.evaluation_function">
+<span class="sig-name descname"><span class="pre">evaluation_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.named_entity_recognition.NamedEntityRecognitionIfo.evaluation_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the <span class="math notranslate nohighlight">\(F_1\)</span> score on all tags excluding <code class="docutils literal notranslate"><span class="pre">'O'</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="casimir.data.named_entity_recognition.NamedEntityRecognitionIfo.function_value">
+<span class="sig-name descname"><span class="pre">function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.named_entity_recognition.NamedEntityRecognitionIfo.function_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the pair <span class="math notranslate nohighlight">\(\big( f_i(w), f_{i, \mu}(w) \big)\)</span>.
+If <code class="docutils literal notranslate"><span class="pre">smoothing_coefficient</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, i.e., no smoothing,
+simply return <span class="math notranslate nohighlight">\(f_i(w)\)</span>, where <span class="math notranslate nohighlight">\(i\)</span> represents the index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="casimir.data.named_entity_recognition.NamedEntityRecognitionIfo.gradient">
+<span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.named_entity_recognition.NamedEntityRecognitionIfo.gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return that gradient <span class="math notranslate nohighlight">\(\nabla f_{i, \mu}(w)\)</span> if <code class="docutils literal notranslate"><span class="pre">smoothing_coefficient</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>
+or <span class="math notranslate nohighlight">\(\nabla f_i(w)\)</span> if <code class="docutils literal notranslate"><span class="pre">smoothing_coefficient</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="casimir.data.named_entity_recognition.NerDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.data.named_entity_recognition.</span></span><span class="sig-name descname"><span class="pre">NerDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lines</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">word_to_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_to_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_to_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ner_to_idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.named_entity_recognition.NerDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class to parse CoNLL-2003 data and allow random access into dataset.</p>
+<p>Requires output of <code class="docutils literal notranslate"><span class="pre">generate_counts_and_feature_map</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="casimir.data.named_entity_recognition.viterbi_decode">
+<span class="sig-prename descclassname"><span class="pre">casimir.data.named_entity_recognition.</span></span><span class="sig-name descname"><span class="pre">viterbi_decode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ner_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.named_entity_recognition.viterbi_decode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Viterbi decoding to find maximum scoring label sequence</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>words</strong> – sequence of words, as a part of input</p></li>
+<li><p><strong>pos_tags</strong> – sequence of part of speech tags, as a part of input</p></li>
+<li><p><strong>chunk_tags</strong> – sequence of chunk tags, as a part of input</p></li>
+<li><p><strong>ner_tags</strong> – output sequence of NER tags</p></li>
+<li><p><strong>num_tags</strong> – total number of possible NER tags</p></li>
+<li><p><strong>model</strong> – Ndarray of weights</p></li>
+<li><p><strong>use_loss</strong> – use loss-augmented inference with Hamming loss if true</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>highest score, best scoring label sequence</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="casimir.data.named_entity_recognition.viterbi_decode_top_k">
+<span class="sig-prename descclassname"><span class="pre">casimir.data.named_entity_recognition.</span></span><span class="sig-name descname"><span class="pre">viterbi_decode_top_k</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_highest_scores</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">words</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ner_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_tags</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.named_entity_recognition.viterbi_decode_top_k" title="Permalink to this definition">¶</a></dt>
+<dd><p>Top-K Viterbi decoding to find <span class="math notranslate nohighlight">\(K\)</span> maximum scoring label sequences</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_highest_scores</strong> – the parameter <span class="math notranslate nohighlight">\(K\)</span> in top-K inference</p></li>
+<li><p><strong>words</strong> – sequence of words, as a part of input</p></li>
+<li><p><strong>pos_tags</strong> – sequence of part of speech tags, as a part of input</p></li>
+<li><p><strong>chunk_tags</strong> – sequence of chunk tags, as a part of input</p></li>
+<li><p><strong>ner_tags</strong> – output sequence of NER tags</p></li>
+<li><p><strong>num_tags</strong> – total number of possible NER tags</p></li>
+<li><p><strong>model</strong> – <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> of weights</p></li>
+<li><p><strong>use_loss</strong> (<em>boolean</em>) – use loss-augmented inference with Hamming loss if <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(K\)</span> highest scores and the corresponding label sequences</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="visual-object-localization">
+<span id="id3"></span><h2>Visual Object Localization<a class="headerlink" href="#visual-object-localization" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="casimir.data.localization.create_loc_ifo_from_data">
+<span class="sig-prename descclassname"><span class="pre">casimir.data.localization.</span></span><span class="sig-name descname"><span class="pre">create_loc_ifo_from_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2304</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothing_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_highest_scores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.localization.create_loc_ifo_from_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a smoothed incremental first order oracle for train and validation sets for Pascal VOC 2007
+given candidate bounding boxes and features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_class</strong> – Name of object class.</p></li>
+<li><p><strong>label_file</strong> – Pickled file with candidate bounding boxes and their IoUs with ground truth.</p></li>
+<li><p><strong>features_dir</strong> – Directory with feature representation of candidate bounding boxes.
+Each file is stored as <code class="docutils literal notranslate"><span class="pre">{image-ID}_{obj-class}.npy</span></code>, where image-ID is the six digit image ID number.</p></li>
+<li><p><strong>dimension</strong> – Dimension of feature representation. Default is 2304, a hard-coded value.</p></li>
+<li><p><strong>smoothing_coefficient</strong> – Smoothing coefficient to initialize Smoothed IFOs. Default <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>num_highest_scores</strong> – The parameter <span class="math notranslate nohighlight">\(K\)</span> used by the top-K inference  algorithm. Default 5.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Train, dev and test Smoothed IFOs. Dev (test) IFO is <code class="docutils literal notranslate"><span class="pre">None</span></code> if dev (test) file is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="casimir.data.localization.LocalizationIfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.data.localization.</span></span><span class="sig-name descname"><span class="pre">LocalizationIfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voc_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothing_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_highest_scores</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.localization.LocalizationIfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create the smoothed IFO object for the structural hinge loss object localization with Pascal VOC.</p>
+<p>Supports both non-smooth and <span class="math notranslate nohighlight">\(\ell_2\)</span> smoothed versions of the structural hinge loss
+but not entropy smoothing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>voc_dataset</strong> – <code class="docutils literal notranslate"><span class="pre">reader.VocDataset</span></code> object that supports <code class="docutils literal notranslate"><span class="pre">__len__</span></code> and <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> methods.</p></li>
+<li><p><strong>smoothing_coefficient</strong> – The amount of smoothing, <span class="math notranslate nohighlight">\(\mu\)</span>.</p></li>
+<li><p><strong>num_highest_scores</strong> – The value <span class="math notranslate nohighlight">\(K\)</span> for top-<span class="math notranslate nohighlight">\(K\)</span> inference.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="casimir.data.localization.LocalizationIfo.evaluation_function">
+<span class="sig-name descname"><span class="pre">evaluation_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.localization.LocalizationIfo.evaluation_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return average IoU, localization accuracy and average precision.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="casimir.data.localization.LocalizationIfo.function_value">
+<span class="sig-name descname"><span class="pre">function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.localization.LocalizationIfo.function_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the pair <span class="math notranslate nohighlight">\(\big( f_i(w), f_{i, \mu}(w) \big)\)</span>.
+If <code class="docutils literal notranslate"><span class="pre">smoothing_coefficient</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, i.e., no smoothing,
+simply return <span class="math notranslate nohighlight">\(f_i(w)\)</span>, where <span class="math notranslate nohighlight">\(i\)</span> represents the index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="casimir.data.localization.LocalizationIfo.gradient">
+<span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.localization.LocalizationIfo.gradient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return that gradient <span class="math notranslate nohighlight">\(\nabla f_{i, \mu}(w)\)</span> if <code class="docutils literal notranslate"><span class="pre">smoothing_coefficient</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>
+or <span class="math notranslate nohighlight">\(\nabla f_i(w)\)</span> if <code class="docutils literal notranslate"><span class="pre">smoothing_coefficient</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="casimir.data.localization.VocDataset">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.data.localization.</span></span><span class="sig-name descname"><span class="pre">VocDataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj_class</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_bboxes_per_image</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2304</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.data.localization.VocDataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Store a set of images of Pascal VOC 2007 for image localization. Supports <code class="docutils literal notranslate"><span class="pre">__len__</span></code> and <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code>.</p>
+<p>Each image is assumed to contain only one object of the class of interest (it may contain other classes).</p>
+<p>Apart from the images and labels of Pascal VOC 2007, this class also requires a set of candidate bounding
+boxes to contain this class (e.g., from the output of selective search) and the IoU (intersection over union)
+of each candidate bounding box with the true bounding box, as well as features of the
+bounding box.</p>
+<p>The candidate boxes and their feature representation are directly loaded from disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj_class</strong> – Name of object class.</p></li>
+<li><p><strong>label_file</strong> – Path to the pickle file with labels and bounding boxes.</p></li>
+<li><p><strong>feature_dir</strong> – Directory with features.
+Each file is stored as <code class="docutils literal notranslate"><span class="pre">{image-ID}_{obj-class}.npy</span></code>, where image-ID is the six digit image ID number.</p></li>
+<li><p><strong>data_type</strong> – <code class="docutils literal notranslate"><span class="pre">'train'</span></code> or <code class="docutils literal notranslate"><span class="pre">'val'</span></code></p></li>
+<li><p><strong>num_bboxes_per_image</strong> – Number of bounding boxes loaded per image. Default 1000.</p></li>
+<li><p><strong>dim</strong> – Dimensionality of features. Default is 2304.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="extending-to-new-tasks-and-datasets">
+<h2>Extending to new tasks and datasets<a class="headerlink" href="#extending-to-new-tasks-and-datasets" title="Permalink to this heading">¶</a></h2>
+<p>The framework of IFOs decouples the optimization from the data and loss function used, as captured by the figure below.</p>
+<a class="reference internal image-reference" href="../_images/fig.001.png"><img alt="../_images/fig.001.png" class="align-center" src="../_images/fig.001.png" style="width: 504.0px; height: 185.5px;" /></a>
+<p>In order to define a new incremental first order oracle, one must override the class
+<code class="docutils literal notranslate"><span class="pre">casimir.optim.IncrementalFirstOrderOracle</span></code> or the class
+<code class="docutils literal notranslate"><span class="pre">casimir.optim.SmoothedIncrementalFirstOrderOracle</span></code>.
+See the <a class="reference external" href="optim.html">documentation of these classes</a> for more details.</p>
+<p>See IFOs for <a class="reference internal" href="#classification">classification</a> or for structural support vector machines for <a class="reference internal" href="#named-entity-recognition">named entity recognition</a> and
+<a class="reference internal" href="#visual-object-localization">visual object localization</a> for reference on how this is done.</p>
+</section>
+</section>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="optim.html" title="previous chapter (use the left arrow)">API reference for casimir.optim</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="struct_pred.html" title="next chapter (use the right arrow)">API reference for structured_prediction_experiment</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="struct_pred.html" title="API reference for structured_prediction_experiment"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="optim.html" title="API reference for casimir.optim"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">casimir  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">API reference for casimir.data</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Krishna Pillutla. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

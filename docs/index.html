@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Casimir: Catalyst, smoothing, and inference &#8212; casimir  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/guzzle.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started" href="start.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="start.html" title="Getting Started"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">casimir  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Casimir: Catalyst, smoothing, and inference</a></li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">Casimir: Catalyst, smoothing, and inference</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#table-of-contents">Table of Contents</a></li>
+<li><a class="reference internal" href="#authors">Authors</a></li>
+<li><a class="reference internal" href="#cite">Cite</a></li>
+<li><a class="reference internal" href="#acknowledgments">Acknowledgments</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="start.html"
+                          title="next chapter">Getting Started</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="#">Docs</a></li>
+              
+              <li>Casimir: Catalyst, smoothing, and inference</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <section id="casimir-catalyst-smoothing-and-inference">
+<h1>Casimir: Catalyst, smoothing, and inference<a class="headerlink" href="#casimir-catalyst-smoothing-and-inference" title="Permalink to this heading">¶</a></h1>
+<p>A toolbox of selected optimization algorithms including Casimir-SVRG
+(as well as SVRG and Catalyst-SVRG as special cases)
+for unstructured tasks such as binary classification, and structured prediction tasks
+such as visual object localization and named entity recognition.
+This is code accompanying the paper
+“<a class="reference external" href="https://krishnap25.github.io/papers/2018_neurips_smoother.pdf">A Smoother Way to Train Structured Prediction Models</a>” in NeurIPS 2018.
+The package is licensed under the GPLv3 license.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
+<p>This package considers minimizing convex functions of the form</p>
+<div class="math notranslate nohighlight">
+\[f(w) = \frac{1}{n} \sum_{i=1}^n f_i(w) + r(w),\]</div>
+<p>where each <span class="math notranslate nohighlight">\(f_i: R^d \to R\)</span> is convex and <span class="math notranslate nohighlight">\(r: R^d \to R\)</span>
+is a strongly convex regularizing function.</p>
+<p>All primal incremental optimization algorithms require defining an
+<em>incremental first order oracle</em> (IFO) for <span class="math notranslate nohighlight">\(f\)</span>.
+That is, given an integer <span class="math notranslate nohighlight">\(i\)</span> and a <span class="math notranslate nohighlight">\(w \in R^d\)</span>, the IFO returns
+the function value <span class="math notranslate nohighlight">\(f_i(w)\)</span> and
+the gradient <span class="math notranslate nohighlight">\(\nabla f_i(w)\)</span> if it exists or a subgradient
+<span class="math notranslate nohighlight">\(g \in \partial f_i(w)\)</span> otherwise.</p>
+<p>This package also considers non-smooth functions of the form <span class="math notranslate nohighlight">\(h(Aw)\)</span>
+where <span class="math notranslate nohighlight">\(h\)</span> is smoothable,
+i.e., a smooth approximation <span class="math notranslate nohighlight">\(h_\mu\)</span> can be computed analytically or algorithmically.
+Examples include the structural hinge loss for structured prediction.
+In this case, the code must define a <em>smoothed incremental first order oracle</em>,
+which returns <span class="math notranslate nohighlight">\(f_{i, \mu}(w)\)</span> and <span class="math notranslate nohighlight">\(\nabla f_{i, \mu}(w)\)</span>.</p>
+<p>This package provides primal incremental optimization algorithms to minimize <span class="math notranslate nohighlight">\(f(w)\)</span>
+defined above. The implemented algorithms include Casimir-SVRG, SVRG and SGD.
+To use these optimization algorithms on new data and loss functions, the user simply has to define
+a (smoothed) IFO for this problem. The framework of IFOs decouples the optimization from the data handling and
+loss function definition. This idea is captured by the figure below.</p>
+<a class="reference internal image-reference" href="_images/fig.001.png"><img alt="_images/fig.001.png" src="_images/fig.001.png" style="width: 756.0px; height: 278.25px;" /></a>
+</section>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="start.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="start.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#quick-start-binary-classification">Quick start: Binary Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#starting-with-named-entity-recognition">Starting with Named Entity Recognition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#optimization">Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#structured-prediction-utilities">Structured Prediction Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_detailed/optim.html">API for Optimization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/optim.html#incremental-first-order-oracles">Incremental First Order Oracles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/optim.html#optimization-algorithms">Optimization Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/optim.html#regularization">Regularization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_detailed/data.html">API for data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/data.html#classification">Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/data.html#named-entity-recognition">Named Entity Recognition:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/data.html#visual-object-localization">Visual Object Localization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/data.html#extending-to-new-tasks-and-datasets">Extending to new tasks and datasets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_detailed/struct_pred.html">Structured prediction utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/struct_pred.html#casimir.structured_prediction_experiment.utils.make_parser"><code class="docutils literal notranslate"><span class="pre">make_parser()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/struct_pred.html#casimir.structured_prediction_experiment.utils.get_output_filename"><code class="docutils literal notranslate"><span class="pre">get_output_filename()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/struct_pred.html#casimir.structured_prediction_experiment.utils.get_ifo"><code class="docutils literal notranslate"><span class="pre">get_ifo()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/struct_pred.html#casimir.structured_prediction_experiment.utils.run_algorithm"><code class="docutils literal notranslate"><span class="pre">run_algorithm()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_detailed/struct_pred.html#command-line-arguments">Command line arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="expt.html">Reproducing experiments in the paper</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="expt.html#data-to-reproduce-experiments">Data to reproduce experiments</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+<section id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://homes.cs.washington.edu/~pillutla/">Krishna Pillutla</a></p></li>
+<li><p><a class="reference external" href="http://faculty.washington.edu/vroulet/">Vincent Roulet</a></p></li>
+<li><p><a class="reference external" href="https://homes.cs.washington.edu/~sham/">Sham M. Kakade</a></p></li>
+<li><p><a class="reference external" href="http://faculty.washington.edu/zaid/">Zaid Harchaoui</a></p></li>
+</ul>
+</section>
+<section id="cite">
+<h2>Cite<a class="headerlink" href="#cite" title="Permalink to this heading">¶</a></h2>
+<p>If you found this package useful, please cite the following work.
+If you use this code, please cite:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@incollection</span><span class="p">{</span><span class="n">pillutla</span><span class="o">-</span><span class="n">etal</span><span class="p">:</span><span class="n">casimir</span><span class="p">:</span><span class="n">neurips2018</span><span class="p">,</span>
+<span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">A</span> <span class="n">smoother</span> <span class="n">way</span> <span class="n">to</span> <span class="n">train</span> <span class="n">structured</span> <span class="n">prediction</span> <span class="n">models</span><span class="p">},</span>
+<span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Pillutla</span><span class="p">,</span> <span class="n">Krishna</span> <span class="ow">and</span>
+          <span class="n">Roulet</span><span class="p">,</span> <span class="n">Vincent</span> <span class="ow">and</span>
+          <span class="n">Kakade</span><span class="p">,</span> <span class="n">Sham</span> <span class="n">M</span><span class="o">.</span> <span class="ow">and</span>
+          <span class="n">Harchaoui</span><span class="p">,</span> <span class="n">Zaid</span><span class="p">},</span>
+<span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">Advances</span> <span class="ow">in</span> <span class="n">Neural</span> <span class="n">Information</span> <span class="n">Processing</span> <span class="n">Systems</span> <span class="mi">31</span><span class="p">},</span>
+<span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2018</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Direct any questions, comments or concerns to
+<a class="reference external" href="https://homes.cs.washington.edu/~pillutla/">Krishna Pillutla</a>.</p>
+</section>
+<section id="acknowledgments">
+<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this heading">¶</a></h2>
+<p>This work was supported by NSF Award CCF-1740551,
+the Washington Research Foundation for innovation in Data-intensive Discovery,
+and the program “Learning in Machines and Brains” of CIFAR.</p>
+<p><a class="reference external" href="http://ads-institute.uw.edu/"><img alt="adsi" src="_images/ADSI.png" style="width: 25%;" /></a>    <a class="reference external" href="https://nsf.gov/"><img alt="nsf" src="_images/NSF.gif" style="width: 11%;" /></a>
+<a class="reference external" href="https://escience.washington.edu/"><img alt="esci" src="_images/escience.png" style="width: 40%;" /></a>      <a class="reference external" href="https://www.cifar.ca/"><img alt="cifar" src="_images/cifar.jpg" style="width: 15%;" /></a></p>
+</section>
+</section>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="start.html" title="next chapter (use the right arrow)">Getting Started</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="start.html" title="Getting Started"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">casimir  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Casimir: Catalyst, smoothing, and inference</a></li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Krishna Pillutla. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>
