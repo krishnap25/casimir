@@ -1,0 +1,627 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API reference for structured_prediction_experiment &#8212; casimir  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=362ab14a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_sources/api_detailed/struct_pred';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">casimir  documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../start.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_detailed/optim.html">API for Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_detailed/data.html">API for data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api_detailed/struct_pred.html">Structured prediction utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../expt.html">Reproducing experiments in the paper</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/krishnap25/sqwash" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/_sources/api_detailed/struct_pred.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>API reference for structured_prediction_experiment</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-arguments">Command line arguments</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="api-reference-for-structured-prediction-experiment">
+<h1>API reference for structured_prediction_experiment<a class="headerlink" href="#api-reference-for-structured-prediction-experiment" title="Link to this heading">#</a></h1>
+<section id="command-line-arguments">
+<h2>Command line arguments<a class="headerlink" href="#command-line-arguments" title="Link to this heading">#</a></h2>
+<p>The table below describes command line arguments for the structured prediction experiments,
+namely named entity recognition and visual object localization. The main files are respectively
+<code class="docutils literal notranslate"><span class="pre">main_ner.py</span></code> and <code class="docutils literal notranslate"><span class="pre">main_loc.py</span></code>.
+The common arguments apply to both these files, which specialized arguments apply only to individual files.
+This is followed by arguments unique to each individual main file.</p>
+<table class="table" id="id2">
+<caption><span class="caption-text"><strong>Common command line arguments</strong></span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 15.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 65.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>l2reg</p></td>
+<td><p>float</p></td>
+<td><p>0.1</p></td>
+<td><p><span class="math notranslate nohighlight">\(\ell_2\)</span> regularizer which taken to be <code class="docutils literal notranslate"><span class="pre">l2reg</span></code><span class="math notranslate nohighlight">\(/n\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the number of examples</p></td>
+</tr>
+<tr class="row-odd"><td><p>prefix</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'./data'</span></code></p></td>
+<td><p>Prefix applied to all data paths such as <code class="docutils literal notranslate"><span class="pre">train_file</span></code> or <code class="docutils literal notranslate"><span class="pre">bbox-dir</span></code> below</p></td>
+</tr>
+<tr class="row-even"><td><p>output-dir</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'./outputs'</span></code></p></td>
+<td><p>Directory where logged outputs are saved</p></td>
+</tr>
+<tr class="row-odd"><td><p>algorithm</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'sgd'</span></code></p></td>
+<td><p>Which optimization algorithm to use. See below for a detailed <a class="reference internal" href="#description">description</a> of options and what they imply.</p></td>
+</tr>
+<tr class="row-even"><td><p>num_passes</p></td>
+<td><p>int</p></td>
+<td><p>100</p></td>
+<td><p>Maximum number of passes to make through data</p></td>
+</tr>
+<tr class="row-odd"><td><p>seed</p></td>
+<td><p>float</p></td>
+<td><p>1234</p></td>
+<td><p>Random seed to use for reproducibility</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>lr</p></td>
+<td><p>float</p></td>
+<td><p>1.0</p></td>
+<td><p>Learning rate for SGD or SVRG or Casimir-SVRG (<code class="docutils literal notranslate"><span class="pre">'csvrg_lr'</span></code>). Ignored by <code class="docutils literal notranslate"><span class="pre">'csvrg'</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>lr-t</p></td>
+<td><p>float</p></td>
+<td><p>1.0</p></td>
+<td><p>Learning rate decay for SGD and ignored by other algorithms. Use learning rate <span class="math notranslate nohighlight">\(\eta_t = \eta_0 / (1 + t/t_0)\)</span> where <span class="math notranslate nohighlight">\(\eta_0\)</span> is specified using <code class="docutils literal notranslate"><span class="pre">--lr</span></code> and <span class="math notranslate nohighlight">\(t_0\)</span> is specified using <code class="docutils literal notranslate"><span class="pre">--lr-t</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>L</p></td>
+<td><p>float</p></td>
+<td><p>1.0</p></td>
+<td><p>Gradient Lipschtiz coefficient for use by Casimir-SVRG (<code class="docutils literal notranslate"><span class="pre">'csvrg'</span></code>). Ignored by other algorithms</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>smoother</p></td>
+<td><p>float</p></td>
+<td><p>1.0</p></td>
+<td><p>Initial smoothing coefficient for algorithms that require smoothing. Ignored by algorithms that do not require smoothing</p></td>
+</tr>
+<tr class="row-even"><td><p>decay_smoother</p></td>
+<td><p>str</p></td>
+<td><p>‘none’</p></td>
+<td><p>Type to smoothing decay to be applied. Options are <code class="docutils literal notranslate"><span class="pre">'none'</span></code> for no decay or <code class="docutils literal notranslate"><span class="pre">'expo'</span></code> for <span class="math notranslate nohighlight">\(\mu_0 c_t^{-t}\)</span> or <code class="docutils literal notranslate"><span class="pre">'linear'</span></code> for <span class="math notranslate nohighlight">\(\mu_0 / t\)</span> where <span class="math notranslate nohighlight">\(\mu_0\)</span> is specified via <code class="docutils literal notranslate"><span class="pre">--smoother</span></code>. Refer to documentation of <code class="docutils literal notranslate"><span class="pre">casimir.optim.CasimirSVRGOptimizer</span></code> for details.</p></td>
+</tr>
+<tr class="row-odd"><td><p>K</p></td>
+<td><p>int</p></td>
+<td><p>5</p></td>
+<td><p>the value of <span class="math notranslate nohighlight">\(K\)</span> for top-<span class="math notranslate nohighlight">\(K\)</span> inference for <span class="math notranslate nohighlight">\(\ell_2\)</span> smoothing</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>warm_start</p></td>
+<td><p>int</p></td>
+<td><p>3</p></td>
+<td><p>Warm start strategy for Casimir-SVRG. <code class="docutils literal notranslate"><span class="pre">1</span></code> refers to <code class="docutils literal notranslate"><span class="pre">prox-center</span></code> while <code class="docutils literal notranslate"><span class="pre">2</span></code> to <code class="docutils literal notranslate"><span class="pre">extrapolation</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code> to <code class="docutils literal notranslate"><span class="pre">prev-iterate</span></code>. Refer to documentation of <code class="docutils literal notranslate"><span class="pre">casimir.optim.CasimirSVRGOptimizer</span></code> for details.</p></td>
+</tr>
+<tr class="row-even"><td><p>kappa</p></td>
+<td><p>float</p></td>
+<td><p>1.0</p></td>
+<td><p>scaling factor on initial Moreau coefficient for Casimir-SVRG variant <code class="docutils literal notranslate"><span class="pre">'csvrg_lr'</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="table" id="id3">
+<caption><span class="caption-text"><strong>Command line arguments specific to</strong> <code class="docutils literal notranslate"><span class="pre">main_ner.py</span></code></span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>train_file</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'conll03_ner/eng.train'</span></code></p></td>
+<td><p>Name of text file with training data</p></td>
+</tr>
+<tr class="row-odd"><td><p>dev_file</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'conll03_ner/eng.testa'</span></code></p></td>
+<td><p>Name of text file with development data</p></td>
+</tr>
+<tr class="row-even"><td><p>test_file</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'conll03_ner/eng.testb'</span></code></p></td>
+<td><p>Name of text file with †esting data</p></td>
+</tr>
+</tbody>
+</table>
+<table class="table" id="id4">
+<caption><span class="caption-text"><strong>Command line arguments specific to</strong> <code class="docutils literal notranslate"><span class="pre">main_loc.py</span></code></span><a class="headerlink" href="#id4" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 10.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argument Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Default</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>object-class</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'dog'</span></code></p></td>
+<td><p>Name of object class to run experiment on</p></td>
+</tr>
+<tr class="row-odd"><td><p>bbox-dir</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'voc2007/bboxes'</span></code></p></td>
+<td><p>Name of directory with bounding box information. See <a class="reference external" href="../expt.html">this page</a> on how to obtain this data</p></td>
+</tr>
+<tr class="row-even"><td><p>features-dir</p></td>
+<td><p>str</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">'voc2007/features'</span></code></p></td>
+<td><p>Name of directory with bounding box features. See <a class="reference external" href="../expt.html">this page</a> on how to obtain this data</p></td>
+</tr>
+</tbody>
+</table>
+<span id="description"></span><table class="table" id="id5">
+<caption><span class="caption-text"><strong>Description of algorithms accepted by</strong> <code class="docutils literal notranslate"><span class="pre">--algorithm</span></code></span><a class="headerlink" href="#id5" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 10.0%" />
+<col style="width: 90.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Algorithm</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'csvrg'</span></code></p></td>
+<td><p>Casimir-SVRG with learning rate specified implicitly via <code class="docutils literal notranslate"><span class="pre">grad_lipshitz_parameter</span></code>. Specify command line argument <code class="docutils literal notranslate"><span class="pre">--L</span></code> for <code class="docutils literal notranslate"><span class="pre">grad_lipschitz_parameter</span></code>. Requires smoothing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'csvrg_lr'</span></code></p></td>
+<td><p>Casimir-SVRG with learning rate specified direcly as <code class="docutils literal notranslate"><span class="pre">--lr</span></code>. Requires smoothing.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'svrg'</span></code></p></td>
+<td><p>SVRG with learning rate specified via <code class="docutils literal notranslate"><span class="pre">--lr</span></code>. Requires smoothing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'sgd'</span></code></p></td>
+<td><p>SGD with learning rates <span class="math notranslate nohighlight">\(\eta_t = \eta_0 / (1 + t/t_0)\)</span> where <span class="math notranslate nohighlight">\(\eta_0\)</span> is specified using <code class="docutils literal notranslate"><span class="pre">--lr</span></code> and <span class="math notranslate nohighlight">\(t_0\)</span> is specified using <code class="docutils literal notranslate"><span class="pre">--lr-t</span></code> and weighted averaging <span class="math notranslate nohighlight">\(\bar w_T = \frac{2}{T(T+1)} \sum_{t=0}^{T} t \cdot w_t\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'sgd_const'</span></code></p></td>
+<td><p>SGD with constant learning rate specified as <span class="math notranslate nohighlight">\(\eta_0\)</span> and weighted averaging <span class="math notranslate nohighlight">\(\bar w_T = \frac{2}{T(T+1)} \sum_{t=0}^{T} t \cdot w_t\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">'pegasos'</span></code></p></td>
+<td><p>SGD with learning rates <span class="math notranslate nohighlight">\(\eta_t = (\lambda t)^{-1}\)</span> where <span class="math notranslate nohighlight">\(\lambda\)</span> is the <span class="math notranslate nohighlight">\(L_2\)</span> regularization and weighted averaging <span class="math notranslate nohighlight">\(\bar w_T = \frac{2}{T(T+1)} \sum_{t=0}^{T} t \cdot w_t\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">'bcfw'</span></code></p></td>
+<td><p>Block Coordinate Frank Wolfe optimization for Structural SVMs.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-arguments">Command line arguments</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Krishna Pillutla
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2018, Krishna Pillutla.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

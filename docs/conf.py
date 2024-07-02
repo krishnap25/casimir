@@ -81,16 +81,11 @@ pygments_style = None
 # a list of builtin themes.
 #
 # html_theme = 'alabaster'
-html_theme = 'pydata_sphinx_theme'
-
-html_static_path = ['_static']
-
+html_theme = 'sphinx_book_theme'
 html_theme_options = {
-    "repository_url": "https://github.com/casimir",
+    "repository_url": "https://github.com/krishnap25/sqwash",
     "use_repository_button": True,
 }
-html_title = "Casimir"
-use_download_button = True
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
