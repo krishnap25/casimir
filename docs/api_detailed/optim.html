@@ -1,178 +1,405 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API reference for casimir.optim &#8212; Casimir</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <!-- Licensed under the Apache 2.0 License -->
-  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
-  <!-- Licensed under the SIL Open Font License -->
-  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
-  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=362ab14a" />
   
-    <title>API reference for casimir.optim &#8212; casimir  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/guzzle.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api_detailed/optim';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="API reference for casimir.data" href="data.html" />
     <link rel="prev" title="Casimir API summary" href="../api.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
   
-   
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-  </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="data.html" title="API reference for casimir.data"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="../api.html" title="Casimir API summary"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">casimir  documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">API reference for casimir.optim</a></li> 
-      </ul>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Casimir</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../start.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api.html">
+                        API Summary
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        API for Optimization
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="data.html">
+                        API for data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="struct_pred.html">
+                        Structured prediction utilities
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../expt.html">
+                        Reproducing experiments in the paper
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
     </div>
-    <div class="container-wrapper">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
 
-      <div id="mobile-toggle">
-        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
-      </div>
-  <div id="left-column">
-    <div class="sphinxsidebar">
-<div class="sidebar-block">
-  <div class="sidebar-wrapper">
-    <h2>Contents</h2>
-    <div class="sidebar-localtoc">
-      <ul>
-<li><a class="reference internal" href="#">API reference for casimir.optim</a><ul>
-<li><a class="reference internal" href="#incremental-first-order-oracles">Incremental First Order Oracles</a><ul>
-<li><a class="reference internal" href="#casimir.optim.IncrementalFirstOrderOracle"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle</span></code></a><ul>
-<li><a class="reference internal" href="#casimir.optim.IncrementalFirstOrderOracle.batch_function_value"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle.batch_function_value()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.IncrementalFirstOrderOracle.batch_gradient"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle.batch_gradient()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.IncrementalFirstOrderOracle.evaluation_function"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle.evaluation_function()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.IncrementalFirstOrderOracle.function_value"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle.function_value()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.IncrementalFirstOrderOracle.gradient"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle.gradient()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle"><code class="docutils literal notranslate"><span class="pre">SmoothedIncrementalFirstOrderOracle</span></code></a><ul>
-<li><a class="reference internal" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle.function_value"><code class="docutils literal notranslate"><span class="pre">SmoothedIncrementalFirstOrderOracle.function_value()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle.gradient"><code class="docutils literal notranslate"><span class="pre">SmoothedIncrementalFirstOrderOracle.gradient()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#optimization-algorithms">Optimization Algorithms</a><ul>
-<li><a class="reference internal" href="#casimir.optim.optimize_ifo"><code class="docutils literal notranslate"><span class="pre">optimize_ifo()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.Optimizer"><code class="docutils literal notranslate"><span class="pre">Optimizer</span></code></a><ul>
-<li><a class="reference internal" href="#casimir.optim.Optimizer.end_epoch"><code class="docutils literal notranslate"><span class="pre">Optimizer.end_epoch()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.Optimizer.start_epoch"><code class="docutils literal notranslate"><span class="pre">Optimizer.start_epoch()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.Optimizer.step"><code class="docutils literal notranslate"><span class="pre">Optimizer.step()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#casimir.optim.CasimirSVRGOptimizer"><code class="docutils literal notranslate"><span class="pre">CasimirSVRGOptimizer</span></code></a><ul>
-<li><a class="reference internal" href="#casimir.optim.CasimirSVRGOptimizer.end_epoch"><code class="docutils literal notranslate"><span class="pre">CasimirSVRGOptimizer.end_epoch()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.CasimirSVRGOptimizer.start_epoch"><code class="docutils literal notranslate"><span class="pre">CasimirSVRGOptimizer.start_epoch()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.CasimirSVRGOptimizer.step"><code class="docutils literal notranslate"><span class="pre">CasimirSVRGOptimizer.step()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#casimir.optim.SGDOptimizer"><code class="docutils literal notranslate"><span class="pre">SGDOptimizer</span></code></a><ul>
-<li><a class="reference internal" href="#casimir.optim.SGDOptimizer.end_epoch"><code class="docutils literal notranslate"><span class="pre">SGDOptimizer.end_epoch()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.SGDOptimizer.start_epoch"><code class="docutils literal notranslate"><span class="pre">SGDOptimizer.start_epoch()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.SGDOptimizer.step"><code class="docutils literal notranslate"><span class="pre">SGDOptimizer.step()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#casimir.optim.SVRGOptimizer"><code class="docutils literal notranslate"><span class="pre">SVRGOptimizer</span></code></a><ul>
-<li><a class="reference internal" href="#casimir.optim.SVRGOptimizer.end_epoch"><code class="docutils literal notranslate"><span class="pre">SVRGOptimizer.end_epoch()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.SVRGOptimizer.start_epoch"><code class="docutils literal notranslate"><span class="pre">SVRGOptimizer.start_epoch()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.SVRGOptimizer.step"><code class="docutils literal notranslate"><span class="pre">SVRGOptimizer.step()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#casimir.optim.block_coordinate_frank_wolfe_optimize"><code class="docutils literal notranslate"><span class="pre">block_coordinate_frank_wolfe_optimize()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.termination_gradient_norm"><code class="docutils literal notranslate"><span class="pre">termination_gradient_norm()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#regularization">Regularization</a><ul>
-<li><a class="reference internal" href="#casimir.optim.L2Penalty"><code class="docutils literal notranslate"><span class="pre">L2Penalty</span></code></a><ul>
-<li><a class="reference internal" href="#casimir.optim.L2Penalty.function_value"><code class="docutils literal notranslate"><span class="pre">L2Penalty.function_value()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.L2Penalty.gradient"><code class="docutils literal notranslate"><span class="pre">L2Penalty.gradient()</span></code></a></li>
-<li><a class="reference internal" href="#casimir.optim.L2Penalty.strong_convexity"><code class="docutils literal notranslate"><span class="pre">L2Penalty.strong_convexity()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-    </div>
-  </div>
-</div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="../api.html"
-                          title="previous chapter">Casimir API summary</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="data.html"
-                          title="next chapter">API reference for casimir.data</a></p>
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/api_detailed/optim.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div class="sidebar-block">
-  <div class="sidebar-wrapper">
-    <div id="main-search">
-      <form class="form-inline" action="../search.html" method="GET" role="form">
-        <div class="input-group">
-          <input name="q" type="text" class="form-control" placeholder="Search...">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
-        <input type="hidden" name="check_keywords" value="yes" />
-        <input type="hidden" name="area" value="default" />
-      </form>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
     </div>
+    
   </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../start.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api.html">
+                        API Summary
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        API for Optimization
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="data.html">
+                        API for data
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="struct_pred.html">
+                        Structured prediction utilities
+                      </a>
+                    </li>
+                
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
+                    More
+                </button>
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link dropdown-item nav-internal" href="../expt.html">
+                        Reproducing experiments in the paper
+                      </a>
+                    </li>
+                
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">API...</li>
+  </ul>
+</nav>
 </div>
       
     </div>
-  </div>
-        <div id="right-column">
-          
-          <div role="navigation" aria-label="breadcrumbs navigation">
-            <ol class="breadcrumb">
-              <li><a href="../index.html">Docs</a></li>
+  
+  
+</div>
+</div>
               
-              <li>API reference for casimir.optim</li>
-            </ol>
-          </div>
-          
-          <div class="document clearer body">
-            
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
   <section id="api-reference-for-casimir-optim">
-<h1>API reference for casimir.optim<a class="headerlink" href="#api-reference-for-casimir-optim" title="Permalink to this heading">¶</a></h1>
+<h1>API reference for casimir.optim<a class="headerlink" href="#api-reference-for-casimir-optim" title="Link to this heading">#</a></h1>
 <section id="incremental-first-order-oracles">
-<h2>Incremental First Order Oracles<a class="headerlink" href="#incremental-first-order-oracles" title="Permalink to this heading">¶</a></h2>
+<h2>Incremental First Order Oracles<a class="headerlink" href="#incremental-first-order-oracles" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="casimir.optim.IncrementalFirstOrderOracle">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">IncrementalFirstOrderOracle</span></span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">IncrementalFirstOrderOracle</span></span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle" title="Link to this definition">#</a></dt>
 <dd><p>Base class for incremental first order oracles (IFO).</p>
 <p>For a function <span class="math notranslate nohighlight">\(f(w)\)</span> defined as <span class="math notranslate nohighlight">\(f(w) = \frac{1}{n} \sum_{i=1}^n f_i(w)\)</span>,
 this class is an interface to implement methods to compute
@@ -189,31 +416,31 @@ If a more efficient implementation exists, these methods can be overridden by de
 This is not explicitly checked here.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.IncrementalFirstOrderOracle.batch_function_value">
-<span class="sig-name descname"><span class="pre">batch_function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle.batch_function_value" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">batch_function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle.batch_function_value" title="Link to this definition">#</a></dt>
 <dd><p>Return function value <span class="math notranslate nohighlight">\(f(w)\)</span> where <span class="math notranslate nohighlight">\(w\)</span> is <code class="docutils literal notranslate"><span class="pre">model</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.IncrementalFirstOrderOracle.batch_gradient">
-<span class="sig-name descname"><span class="pre">batch_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle.batch_gradient" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">batch_gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle.batch_gradient" title="Link to this definition">#</a></dt>
 <dd><p>Return gradient <span class="math notranslate nohighlight">\(\nabla f(w)\)</span> where <span class="math notranslate nohighlight">\(w\)</span> is <code class="docutils literal notranslate"><span class="pre">model</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.IncrementalFirstOrderOracle.evaluation_function">
-<span class="sig-name descname"><span class="pre">evaluation_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle.evaluation_function" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">evaluation_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle.evaluation_function" title="Link to this definition">#</a></dt>
 <dd><p>Return domain-specific task metrics (default <code class="docutils literal notranslate"><span class="pre">None</span></code>).</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.IncrementalFirstOrderOracle.function_value">
-<span class="sig-name descname"><span class="pre">function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle.function_value" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle.function_value" title="Link to this definition">#</a></dt>
 <dd><p>Return function value <span class="math notranslate nohighlight">\(f_i(w)\)</span> where <span class="math notranslate nohighlight">\(w\)</span> is <code class="docutils literal notranslate"><span class="pre">model</span></code> and <span class="math notranslate nohighlight">\(i\)</span> is <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.IncrementalFirstOrderOracle.gradient">
-<span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle.gradient" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.IncrementalFirstOrderOracle.gradient" title="Link to this definition">#</a></dt>
 <dd><p>Return gradient <span class="math notranslate nohighlight">\(\nabla f_i(w)\)</span> where <span class="math notranslate nohighlight">\(w\)</span> is <code class="docutils literal notranslate"><span class="pre">model</span></code> and <span class="math notranslate nohighlight">\(i\)</span> is <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
 </dd></dl>
 
@@ -221,7 +448,7 @@ This is not explicitly checked here.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="casimir.optim.SmoothedIncrementalFirstOrderOracle">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">SmoothedIncrementalFirstOrderOracle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smoothing_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">SmoothedIncrementalFirstOrderOracle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smoothing_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle" title="Link to this definition">#</a></dt>
 <dd><p>Base class of smoothed incremental first order oracles.</p>
 <p>For a function <span class="math notranslate nohighlight">\(f(x)\)</span> defined as <span class="math notranslate nohighlight">\(f(w) = \frac{1}{n} \sum_{i=1}^n f_i(w)\)</span>,
 where each <span class="math notranslate nohighlight">\(f_i\)</span> is non-smooth but smoothable,
@@ -241,7 +468,7 @@ which can be mutated by optimization algorithms or other functions that use adap
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.SmoothedIncrementalFirstOrderOracle.function_value">
-<span class="sig-name descname"><span class="pre">function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle.function_value" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle.function_value" title="Link to this definition">#</a></dt>
 <dd><p>Return the pair <span class="math notranslate nohighlight">\(\big( f_i(w), f_{i, \mu}(w) \big)\)</span>.
 If <code class="docutils literal notranslate"><span class="pre">smoothing_coefficient</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, i.e., no smoothing,
 simply return <span class="math notranslate nohighlight">\(f_i(w)\)</span>, where <span class="math notranslate nohighlight">\(i\)</span> represents the index <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
@@ -249,7 +476,7 @@ simply return <span class="math notranslate nohighlight">\(f_i(w)\)</span>, wher
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.SmoothedIncrementalFirstOrderOracle.gradient">
-<span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle.gradient" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle.gradient" title="Link to this definition">#</a></dt>
 <dd><p>Return that gradient <span class="math notranslate nohighlight">\(\nabla f_{i, \mu}(w)\)</span> if <code class="docutils literal notranslate"><span class="pre">smoothing_coefficient</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>
 or <span class="math notranslate nohighlight">\(\nabla f_i(w)\)</span> if <code class="docutils literal notranslate"><span class="pre">smoothing_coefficient</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd></dl>
@@ -258,10 +485,10 @@ or <span class="math notranslate nohighlight">\(\nabla f_i(w)\)</span> if <code 
 
 </section>
 <section id="optimization-algorithms">
-<h2>Optimization Algorithms<a class="headerlink" href="#optimization-algorithms" title="Permalink to this heading">¶</a></h2>
+<h2>Optimization Algorithms<a class="headerlink" href="#optimization-algorithms" title="Link to this heading">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="casimir.optim.optimize_ifo">
-<span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">optimize_ifo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dev_ifo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_ifo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SGD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_passes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termination_criterion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optim_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.optimize_ifo" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">optimize_ifo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dev_ifo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_ifo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'SGD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_passes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termination_criterion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optim_options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.optimize_ifo" title="Link to this definition">#</a></dt>
 <dd><p>Minimize a convex function with access to a (smoothed) incremental first order oracle using a primal algorithm.</p>
 <p>Functions that can be handled are of the form <span class="math notranslate nohighlight">\(f(w) = \frac{1}{n} \sum_{i=1}^n f_i(w) + r(w)\)</span>,
 where a (smoothed) incremental first order oracle gives access to each <span class="math notranslate nohighlight">\(f_i\)</span> and <span class="math notranslate nohighlight">\(r(w)\)</span> is a (sum of)
@@ -305,13 +532,13 @@ evaluation metric and the time taken to perform this epoch. The dev (test) stati
 
 <dl class="py class">
 <dt class="sig sig-object py" id="casimir.optim.Optimizer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">Optimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.Optimizer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">Optimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.Optimizer" title="Link to this definition">#</a></dt>
 <dd><p>Base class for optimizers using (smoothed) incremental first order oracles.</p>
 <p>Optimizer classes store the state of the variables to be optimized.</p>
 <p>Any subclass must override the methods <code class="docutils literal notranslate"><span class="pre">start_epoch</span></code>, <code class="docutils literal notranslate"><span class="pre">step</span></code>, <code class="docutils literal notranslate"><span class="pre">end_epoch</span></code>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.Optimizer.end_epoch">
-<span class="sig-name descname"><span class="pre">end_epoch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.Optimizer.end_epoch" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">end_epoch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.Optimizer.end_epoch" title="Link to this definition">#</a></dt>
 <dd><p>Perform optional computation to end epoch and return current iterate to be used for logging.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -322,7 +549,7 @@ evaluation metric and the time taken to perform this epoch. The dev (test) stati
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.Optimizer.start_epoch">
-<span class="sig-name descname"><span class="pre">start_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.Optimizer.start_epoch" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">start_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.Optimizer.start_epoch" title="Link to this definition">#</a></dt>
 <dd><p>Prepare for start of epoch.</p>
 <p>Example uses are warm start in Casimir-SVRG or batch gradient computation in SVRG. Adaptive smoothing algorithms
 may update smoothing parameter here.</p>
@@ -336,7 +563,7 @@ This object may be mutated by adaptive smoothing algorithms.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.Optimizer.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.Optimizer.step" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.Optimizer.step" title="Link to this definition">#</a></dt>
 <dd><p>Take a step based on sample indexed by <code class="docutils literal notranslate"><span class="pre">idx</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -353,7 +580,7 @@ This object may be mutated by adaptive smoothing algorithms.</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="casimir.optim.CasimirSVRGOptimizer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">CasimirSVRGOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grad_lipschitz_parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_smoothing_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothing_coefficient_update_rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'const'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_moreau_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">moreau_coefficient_update_rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'const'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warm_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'prox-center'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.CasimirSVRGOptimizer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">CasimirSVRGOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grad_lipschitz_parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_smoothing_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothing_coefficient_update_rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'const'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_moreau_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">moreau_coefficient_update_rule</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'const'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warm_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'prox-center'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.CasimirSVRGOptimizer" title="Link to this definition">#</a></dt>
 <dd><p>Implement Casimir (Catalyst with smoothing) or Catalyst outer loop with SVRG as the inner loop.</p>
 <p>This optimizer can be invoked by calling <a class="reference internal" href="#casimir.optim.optimize_ifo" title="casimir.optim.optimize_ifo"><code class="xref py py-func docutils literal notranslate"><span class="pre">optimize_ifo()</span></code></a> with argument
 <code class="docutils literal notranslate"><span class="pre">algorithm='casimir_svrg'</span></code> or <code class="docutils literal notranslate"><span class="pre">algorithm='catalyst_svrg'</span></code>.</p>
@@ -430,19 +657,19 @@ added by Casimir in epoch <span class="math notranslate nohighlight">\(t\)</span
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.CasimirSVRGOptimizer.end_epoch">
-<span class="sig-name descname"><span class="pre">end_epoch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.CasimirSVRGOptimizer.end_epoch" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">end_epoch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.CasimirSVRGOptimizer.end_epoch" title="Link to this definition">#</a></dt>
 <dd><p>Remove prox penalty, compute <span class="math notranslate nohighlight">\(lpha, eta\)</span> and update averaged iterate.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.CasimirSVRGOptimizer.start_epoch">
-<span class="sig-name descname"><span class="pre">start_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.CasimirSVRGOptimizer.start_epoch" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">start_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.CasimirSVRGOptimizer.start_epoch" title="Link to this definition">#</a></dt>
 <dd><p>Update Moreau coefficient, smoothing coefficient, learning rate, warm start and batch gradient.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.CasimirSVRGOptimizer.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.CasimirSVRGOptimizer.step" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.CasimirSVRGOptimizer.step" title="Link to this definition">#</a></dt>
 <dd><p>Take a single inner SVRG step and update averaged iterate.</p>
 </dd></dl>
 
@@ -450,7 +677,7 @@ added by Casimir in epoch <span class="math notranslate nohighlight">\(t\)</span
 
 <dl class="py class">
 <dt class="sig sig-object py" id="casimir.optim.SGDOptimizer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">SGDOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate_scheme</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'const'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">averaging</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'wavg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate_time_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SGDOptimizer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">SGDOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate_scheme</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'const'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">averaging</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'wavg'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate_time_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SGDOptimizer" title="Link to this definition">#</a></dt>
 <dd><p>Implement the stochastic (sub-)gradient method with various learning rate and averaging schemes.</p>
 <p>This optimizer can be invoked by calling <a class="reference internal" href="#casimir.optim.optimize_ifo" title="casimir.optim.optimize_ifo"><code class="xref py py-func docutils literal notranslate"><span class="pre">optimize_ifo()</span></code></a> with argument
 <code class="docutils literal notranslate"><span class="pre">algorithm='sgd'</span></code>.</p>
@@ -491,19 +718,19 @@ and corresponding learning rates <span class="math notranslate nohighlight">\(\e
 </ul>
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.SGDOptimizer.end_epoch">
-<span class="sig-name descname"><span class="pre">end_epoch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SGDOptimizer.end_epoch" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">end_epoch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SGDOptimizer.end_epoch" title="Link to this definition">#</a></dt>
 <dd><p>Return averaged iterate.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.SGDOptimizer.start_epoch">
-<span class="sig-name descname"><span class="pre">start_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SGDOptimizer.start_epoch" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">start_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SGDOptimizer.start_epoch" title="Link to this definition">#</a></dt>
 <dd><p>Do nothing.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.SGDOptimizer.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SGDOptimizer.step" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SGDOptimizer.step" title="Link to this definition">#</a></dt>
 <dd><p>Perform a single SGD step and update averaged iterates.</p>
 </dd></dl>
 
@@ -511,7 +738,7 @@ and corresponding learning rates <span class="math notranslate nohighlight">\(\e
 
 <dl class="py class">
 <dt class="sig sig-object py" id="casimir.optim.SVRGOptimizer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">SVRGOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothing_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SVRGOptimizer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">SVRGOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smoothing_coefficient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SVRGOptimizer" title="Link to this definition">#</a></dt>
 <dd><p>Implement Stochastic Variance Reduced Gradient (SVRG) with optional smoothing.</p>
 <p>This optimizer can be invoked by calling <a class="reference internal" href="#casimir.optim.optimize_ifo" title="casimir.optim.optimize_ifo"><code class="xref py py-func docutils literal notranslate"><span class="pre">optimize_ifo()</span></code></a> with argument
 <code class="docutils literal notranslate"><span class="pre">algorithm='svrg'</span></code>.
@@ -519,19 +746,19 @@ The following named parameters can be passed though <code class="docutils litera
 <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code> and <code class="docutils literal notranslate"><span class="pre">smoothing_coefficient</span></code>.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.SVRGOptimizer.end_epoch">
-<span class="sig-name descname"><span class="pre">end_epoch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SVRGOptimizer.end_epoch" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">end_epoch</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SVRGOptimizer.end_epoch" title="Link to this definition">#</a></dt>
 <dd><p>Copy averaged iterate to main iterate and return averaged iterate.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.SVRGOptimizer.start_epoch">
-<span class="sig-name descname"><span class="pre">start_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SVRGOptimizer.start_epoch" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">start_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SVRGOptimizer.start_epoch" title="Link to this definition">#</a></dt>
 <dd><p>Update smoothing coefficient, reset averaged iterate and update batch gradient.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.SVRGOptimizer.step">
-<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SVRGOptimizer.step" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.SVRGOptimizer.step" title="Link to this definition">#</a></dt>
 <dd><p>Take a single SVRG step and update averaged iterate.</p>
 </dd></dl>
 
@@ -539,7 +766,7 @@ The following named parameters can be passed though <code class="docutils litera
 
 <dl class="py function">
 <dt class="sig sig-object py" id="casimir.optim.block_coordinate_frank_wolfe_optimize">
-<span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">block_coordinate_frank_wolfe_optimize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dev_ifo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_ifo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_passes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termination_criterion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.block_coordinate_frank_wolfe_optimize" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">block_coordinate_frank_wolfe_optimize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dev_ifo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_ifo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg_penalties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_passes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termination_criterion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logging</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.block_coordinate_frank_wolfe_optimize" title="Link to this definition">#</a></dt>
 <dd><p>Implement the Block Coordinate Frank-Wolfe (BCFW) algorithm for structured prediction.</p>
 <p>This algorithm is not in the incremental first order oracle model. It requires the task loss in addition to
 first order information of the objective function. From an implementation point of view, it requires an IFO with the
@@ -574,7 +801,7 @@ Default <code class="docutils literal notranslate"><span class="pre">True</span>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="casimir.optim.termination_gradient_norm">
-<span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">termination_gradient_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradient_norm_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.termination_gradient_norm" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">termination_gradient_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_ifo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradient_norm_tolerance</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.termination_gradient_norm" title="Link to this definition">#</a></dt>
 <dd><p>Terminate optimization after gradient norm falls below a certain tolerance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -592,10 +819,10 @@ Default <code class="docutils literal notranslate"><span class="pre">True</span>
 
 </section>
 <section id="regularization">
-<h2>Regularization<a class="headerlink" href="#regularization" title="Permalink to this heading">¶</a></h2>
+<h2>Regularization<a class="headerlink" href="#regularization" title="Link to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="casimir.optim.L2Penalty">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">L2Penalty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regularization_parameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prox_center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.L2Penalty" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">casimir.optim.</span></span><span class="sig-name descname"><span class="pre">L2Penalty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regularization_parameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prox_center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.L2Penalty" title="Link to this definition">#</a></dt>
 <dd><p>Class representing the L2 regularization penalty.</p>
 <p>For a prox-center <span class="math notranslate nohighlight">\(z\)</span> and regularization parameter <span class="math notranslate nohighlight">\(\lambda\)</span>,
 the penalty takes the form <span class="math notranslate nohighlight">\(r(w) = \frac{\lambda}{2}\|w-z\|^2_2\)</span>.</p>
@@ -610,19 +837,19 @@ A value of <code class="docutils literal notranslate"><span class="pre">None</sp
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.L2Penalty.function_value">
-<span class="sig-name descname"><span class="pre">function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.L2Penalty.function_value" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">function_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.L2Penalty.function_value" title="Link to this definition">#</a></dt>
 <dd><p>Return function value of regularization penalty.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.L2Penalty.gradient">
-<span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.L2Penalty.gradient" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.L2Penalty.gradient" title="Link to this definition">#</a></dt>
 <dd><p>Return gradient of penalty at model.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="casimir.optim.L2Penalty.strong_convexity">
-<span class="sig-name descname"><span class="pre">strong_convexity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.L2Penalty.strong_convexity" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">strong_convexity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#casimir.optim.L2Penalty.strong_convexity" title="Link to this definition">#</a></dt>
 <dd><p>Strong convexity coefficient w.r.t. L2 norm.</p>
 </dd></dl>
 
@@ -632,47 +859,172 @@ A value of <code class="docutils literal notranslate"><span class="pre">None</sp
 </section>
 
 
-          </div>
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../api.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Casimir API summary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="data.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">API reference for casimir.data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
             
-  <div class="footer-relations">
-    
-      <div class="pull-left">
-        <a class="btn btn-default" href="../api.html" title="previous chapter (use the left arrow)">Casimir API summary</a>
-      </div>
-    
-      <div class="pull-right">
-        <a class="btn btn-default" href="data.html" title="next chapter (use the right arrow)">API reference for casimir.data</a>
-      </div>
-    </div>
-    <div class="clearer"></div>
-  
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="../genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="data.html" title="API reference for casimir.data"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="../api.html" title="Casimir API summary"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">casimir  documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">API reference for casimir.optim</a></li> 
-      </ul>
-    </div>
-<script type="text/javascript">
-  $("#mobile-toggle a").click(function () {
-    $("#left-column").toggle();
-  });
-</script>
-<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
-  <div class="footer">
-    &copy; Copyright 2018, Krishna Pillutla. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
   </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#incremental-first-order-oracles">Incremental First Order Oracles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.IncrementalFirstOrderOracle"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.IncrementalFirstOrderOracle.batch_function_value"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle.batch_function_value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.IncrementalFirstOrderOracle.batch_gradient"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle.batch_gradient()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.IncrementalFirstOrderOracle.evaluation_function"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle.evaluation_function()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.IncrementalFirstOrderOracle.function_value"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle.function_value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.IncrementalFirstOrderOracle.gradient"><code class="docutils literal notranslate"><span class="pre">IncrementalFirstOrderOracle.gradient()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle"><code class="docutils literal notranslate"><span class="pre">SmoothedIncrementalFirstOrderOracle</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle.function_value"><code class="docutils literal notranslate"><span class="pre">SmoothedIncrementalFirstOrderOracle.function_value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.SmoothedIncrementalFirstOrderOracle.gradient"><code class="docutils literal notranslate"><span class="pre">SmoothedIncrementalFirstOrderOracle.gradient()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-algorithms">Optimization Algorithms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.optimize_ifo"><code class="docutils literal notranslate"><span class="pre">optimize_ifo()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.Optimizer"><code class="docutils literal notranslate"><span class="pre">Optimizer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.Optimizer.end_epoch"><code class="docutils literal notranslate"><span class="pre">Optimizer.end_epoch()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.Optimizer.start_epoch"><code class="docutils literal notranslate"><span class="pre">Optimizer.start_epoch()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.Optimizer.step"><code class="docutils literal notranslate"><span class="pre">Optimizer.step()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.CasimirSVRGOptimizer"><code class="docutils literal notranslate"><span class="pre">CasimirSVRGOptimizer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.CasimirSVRGOptimizer.end_epoch"><code class="docutils literal notranslate"><span class="pre">CasimirSVRGOptimizer.end_epoch()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.CasimirSVRGOptimizer.start_epoch"><code class="docutils literal notranslate"><span class="pre">CasimirSVRGOptimizer.start_epoch()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.CasimirSVRGOptimizer.step"><code class="docutils literal notranslate"><span class="pre">CasimirSVRGOptimizer.step()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.SGDOptimizer"><code class="docutils literal notranslate"><span class="pre">SGDOptimizer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.SGDOptimizer.end_epoch"><code class="docutils literal notranslate"><span class="pre">SGDOptimizer.end_epoch()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.SGDOptimizer.start_epoch"><code class="docutils literal notranslate"><span class="pre">SGDOptimizer.start_epoch()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.SGDOptimizer.step"><code class="docutils literal notranslate"><span class="pre">SGDOptimizer.step()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.SVRGOptimizer"><code class="docutils literal notranslate"><span class="pre">SVRGOptimizer</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.SVRGOptimizer.end_epoch"><code class="docutils literal notranslate"><span class="pre">SVRGOptimizer.end_epoch()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.SVRGOptimizer.start_epoch"><code class="docutils literal notranslate"><span class="pre">SVRGOptimizer.start_epoch()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.SVRGOptimizer.step"><code class="docutils literal notranslate"><span class="pre">SVRGOptimizer.step()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.block_coordinate_frank_wolfe_optimize"><code class="docutils literal notranslate"><span class="pre">block_coordinate_frank_wolfe_optimize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.termination_gradient_norm"><code class="docutils literal notranslate"><span class="pre">termination_gradient_norm()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization">Regularization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.L2Penalty"><code class="docutils literal notranslate"><span class="pre">L2Penalty</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.L2Penalty.function_value"><code class="docutils literal notranslate"><span class="pre">L2Penalty.function_value()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.L2Penalty.gradient"><code class="docutils literal notranslate"><span class="pre">L2Penalty.gradient()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casimir.optim.L2Penalty.strong_convexity"><code class="docutils literal notranslate"><span class="pre">L2Penalty.strong_convexity()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api_detailed/optim.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2018, Krishna Pillutla.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
   </body>
 </html>

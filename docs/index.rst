@@ -86,17 +86,27 @@ If you found this package useful, please cite the following work.
 If you use this code, please cite::
 
    @incollection{pillutla-etal:casimir:neurips2018,
-   title = {A smoother way to train structured prediction models},
+   title = {{A Smoother Way to Train Structured Prediction Models}},
    author = {Pillutla, Krishna and
              Roulet, Vincent and 
              Kakade, Sham M. and
              Harchaoui, Zaid},
-   booktitle = {Advances in Neural Information Processing Systems 31},
+   booktitle = {Advances in Neural Information Processing Systems},
    year = {2018},
    }
 
+   @incollection{pillutla-etal:casimir:ssp2023,
+   title = {{Modified Gauss-Newton Algorithms under Noise}},
+   author = {Pillutla, Krishna and
+             Roulet, Vincent and
+             Kakade, Sham M. and
+             Harchaoui, Zaid},
+   booktitle = {IEEE SSP},
+   year = {2023},
+   }
+
 Direct any questions, comments or concerns to
-`Krishna Pillutla <https://homes.cs.washington.edu/~pillutla/>`_.
+`Krishna Pillutla <https://krishnap25.github.io>`_.
 
 Acknowledgments
 ---------------

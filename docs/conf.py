@@ -80,20 +80,17 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+# html_theme = 'alabaster'
+html_theme = 'pydata_sphinx_theme'
 
-# Theme options are theme-specific and customize the look and feel of a theme
-# further.  For a list of options available for each theme, see the
-# documentation.
-#
-# html_theme_options = {}
+html_static_path = ['_static']
+
 html_theme_options = {
-    'github_button': True,
-    'github_banner': True,
-    'github_user': 'krishnap25',
-    'github_repo': 'casimir',
-    'fixed_sidebar': True,
+    "repository_url": "https://github.com/casimir",
+    "use_repository_button": True,
 }
+html_title = "Casimir"
+use_download_button = True
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -194,21 +191,4 @@ epub_exclude_files = ['search.html']
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
-
-# -- Theme information ------------------------------------------------------
-# install with:
-# pip install guzzle_sphinx_theme
-import guzzle_sphinx_theme
-
-html_theme_path = guzzle_sphinx_theme.html_theme_path()
-html_theme = 'guzzle_sphinx_theme'
-
-# Register the theme as an extension to generate a sitemap.xml
-extensions.append("guzzle_sphinx_theme")
-
-# Guzzle theme options (see theme.conf for more information)
-html_theme_options = {
-            # Set the name of the project to appear in the sidebar
-                "project_nav_name": "Casimir",
-                }
 
